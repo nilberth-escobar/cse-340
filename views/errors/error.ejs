@@ -1,0 +1,10 @@
+<% if (title) { %>
+  <div>
+    <h1><%= title %></h1>
+  </div>
+  <% } else {
+    res.redirect('/')
+  } %>
+
+<h2><%- message %></h2>
+<img src="/images/vehicles/404-car-not-found.png" alt="404 meme" style="border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">

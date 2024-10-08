@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-:root{
+:root {
   /* Colors */
   --white-color: #ffff;
   --black-color: #252422;
@@ -50,11 +50,11 @@ body {
   font-size: var(--font-size);
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   text-decoration: underline;
 }
 
@@ -189,14 +189,12 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   width: 600px;
-  
 }
 .upgrades-div .row {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 10px;
-  
 }
 .upgrades-div div {
   display: flex;
@@ -234,22 +232,178 @@ body {
   text-decoration: none; /* Remove underline (optional) */
 }
 
+/******* Grid ***************/
+#inv-display {
+  list-style: none;
+  margin: 4%;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 20px;
+}
+#inv-display li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+#inv-display li img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 5px;
+  border-bottom: 4px solid #333;
+}
+.namePrice {
+  text-align: center;
+}
+.namePrice h2 {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+.namePrice span {
+  display: block;
+  font-size: 1.1em;
+  color: #333;
+  margin-top: 5px;
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 5% 5%;
+}
+.detail-item {
+  overflow: hidden;
+  display: flex;
+}
+.detail-item div {
+  width: 50%;
+  text-align: left;
+}
+.image-container img {
+  width: 60%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.details-container {
+  padding: 20px;
+}
+.description {
+  margin-top: 10px;
+}
+.miles {
+  margin-top: 10px;
+}
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+}
 
+/* Grid Layout */
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1200px;
+}
 
+.detail-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.1);
+}
+
+.details-container {
+  padding: 20px;
+  text-align: left;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: #1a73e8;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 1rem;
+  color: #777;
+}
+
+.miles {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Notice for no cars */
+.notice {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #999;
+  margin: 40px 0;
+}
+
+/* Special DeLorean Button */
+.cta-button button {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    background-color: #1a73e8;
+  }
+  50% {
+    transform: scale(1.05);
+    background-color: #42a5f5;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #1a73e8;
+  }
+}
 
 /*Everything inside of this @media tag relates to the desktop view (e.g. anything 768px or more)*/
 @media only screen and (min-width: 768px) {
   body {
-  	/* You could use a regular image, but went with gradients */
+    /* You could use a regular image, but went with gradients */
     background-image: linear-gradient(45deg, #000 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #000 75%),
-    linear-gradient(45deg, transparent 75%, #000 75%),
-    linear-gradient(45deg, #000 25%, #fff 25%);
+      linear-gradient(45deg, transparent 75%, #000 75%),
+      linear-gradient(45deg, transparent 75%, #000 75%),
+      linear-gradient(45deg, #000 25%, #fff 25%);
     background-size: 100px 100px;
     background-position: 0 0, 0 0, -50px -50px, 50px 50px;
   }
   #wrapper {
-  	/* This is the blueish border around the desktop version */
+    /* This is the blueish border around the desktop version */
     border: 5px solid var(--main-accent);
     border-radius: 10px;
     margin-top: 1rem;
