@@ -391,6 +391,150 @@ body {
   }
 }
 
+/******* Login form ***************/
+
+/* Form Container */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 800px;
+}
+
+/* Flex Columns */
+.flex-column {
+  margin-bottom: 10px;
+}
+
+.flex-column label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Input Forms */
+.inputForm {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inputForm svg {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  fill: #666;
+  transition: fill 0.3s ease;
+}
+
+.inputForm input {
+  width: 100%;
+  padding: 12px 10px 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.inputForm input:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.inputForm input:focus + svg {
+  fill: #333;
+}
+
+/* Password Button */
+#password-btn {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.button-submit {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.button-submit:hover {
+  opacity: 0.8;
+}
+
+/* Sign Up Link */
+.p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.span {
+  color: #04AA6D;
+  text-decoration: none;
+}
+
+.span:hover {
+  text-decoration: underline;
+}
+
+/* Pop-up Messages */
+.pop-up {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+.inputForm input:focus-within + svg {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button-submit {
+  transition: transform 0.3s ease;
+}
+
+.button-submit:hover {
+  transform: scale(1.01);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 600px) {
+  .form {
+    width: 90%;
+  }
+  .inputForm input {
+    padding: 10px 10px 10px 40px;
+  }
+}
+
+
 /*Everything inside of this @media tag relates to the desktop view (e.g. anything 768px or more)*/
 @media only screen and (min-width: 768px) {
   body {
