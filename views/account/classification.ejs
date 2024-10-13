@@ -1,0 +1,32 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <div class="pop-up"><%- messages() %></div>
+    <% if (errors) { %>
+      <ul class="notice">
+        <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+      <% } %>
+    <div class="form-container">
+      <form class="form" action="/inv/new-classification" method="post">
+        <br />
+        <span>ALL FIELDS ARE REQUIRED</span>
+        <span>NAME MUST BE ALPHABETIC CHARACTERS ONLY</span>
+        <br />
+        <div class="flex-column">
+          <label>Classification name</label>
+        </div>
+        <div class="inputForm">
+          <input
+            type="text"
+            class="input"
+            name="classification_name"
+            placeholder="Enter classification name"
+            required
+          />
+        </div>
+        <button class="button-submit">Add new Classification</button>
+      </form>
+    </div>
+    <% } else { res.redirect('/') } %>

@@ -1,0 +1,152 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <div class="pop-up"><%- messages() %></div>
+    <% if (errors) { %>
+    <ul class="notice">
+      <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+    <% } %>
+    <div class="form-container">
+      <form class="form" action="/inv/new-vehicle" method="post">
+        <br />
+        <span>ALL FIELDS ARE REQUIRED</span>
+        <br />
+        <div class="flex-column">
+          <label>DONT KNOW HOT TO </label>
+        </div>
+    
+        <%- grid %>
+    
+        <div class="flex-column">
+          <label>Make </label>
+        </div>
+        <div class="inputForm">
+          <input
+            type="text"
+            class="input"
+            name="inv_make"
+            placeholder="Min of 3 characters"
+            pattern=".{3,}"
+            title="Please enter at least 3 characters"
+            required
+          />
+        </div>
+    
+        <div class="flex-column">
+          <label>Model</label>
+        </div>
+        <div class="inputForm">
+          <input
+            type="text"
+            class="input"
+            name="inv_model"
+            placeholder="Min of 3 characters"
+            pattern=".{3,}"
+            title="Please enter at least 3 characters"
+            required
+          />
+        </div>
+    
+        <div class="flex-column">
+          <label>Description </label>
+        </div>
+        <div class="inputForm">
+          <textarea
+            class="textarea"
+            name="inv_description"
+            placeholder="Enter additional information here"
+            rows="4"
+            cols="50"
+            required
+          ></textarea>
+        </div>
+    
+        <div class="flex-column">
+          <label>Image Path</label>
+        </div>
+        <div class="inputForm">
+          <input
+            type="text"
+            class="input"
+            name="inv_image"
+            value="/images/vehicles/no-image.png"
+            required
+          />
+        </div>
+    
+        <div class="flex-column">
+          <label>Thumbnail Path</label>
+        </div>
+        <div class="inputForm">
+          <input
+            type="text"
+            class="input"
+            name="inv_thumnail"
+            value="/images/vehicles/no-image.png"
+            required
+          />
+        </div>
+    
+        <div class="flex-column">
+          <label>Price</label>
+        </div>
+        <div class="inputForm">
+          <input
+            type="text"
+            class="input"
+            name="inv_price"
+            placeholder="decimal or integer"
+            required
+            pattern="^\d+(\.\d+)?$"
+            title="Please enter a valid decimal or integer value"
+          />
+        </div>
+    
+        <div class="flex-column">
+          <label>Year</label>
+        </div>
+        <div class="inputForm">
+          <input
+            type="text"
+            class="input"
+            name="inv_year"
+            placeholder="4 digits year"
+            required
+            pattern="^\d{4}$"
+            title="Please enter a 4-digit year"
+          />
+        </div>
+    
+        <div class="flex-column">
+          <label>Miles</label>
+        </div>
+        <div class="inputForm">
+          <input
+            type="text"
+            class="input"
+            name="inv_miles"
+            placeholder="Digits only"
+            required
+            pattern="^\d+$"
+            title="Please enter digits only"
+          />
+        </div>
+    
+        <div class="flex-column">
+          <label>Color</label>
+        </div>
+        <div class="inputForm">
+          <input
+            type="text"
+            class="input"
+            name="inv_color"
+            required
+          />
+        </div>
+    
+        <button class="button-submit">Add New Vehicle</button>
+      </form>
+    </div>
+    <% } else { res.redirect('/') } %>

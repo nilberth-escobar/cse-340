@@ -67,9 +67,14 @@ app.use("/inv", inventoryRoute)
 // Detail routes
 app.use("/inv", detailRoute)
 
+// Error routes
 app.use("/", errorsRoute)
 
+// Account routes
 app.use("/account", require("./routes/accountRoute"))
+
+// Management routes
+app.use("/inv", require("./routes/managementRoute"))
 
 
 // File Not Found Route - MUST be last route in list

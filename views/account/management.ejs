@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <% if (title) { %>
+    <h1><%= title %></h1>
+    <% if (errors && errors.length > 0) { %>
+    <ul>
+      <% errors.forEach(function(error) { %>
+      <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+    <% } %>
+    <h3>Welcome!!!</h3>
+    <p>You're logged in.</p>
+    <a href="/account/edit">Edit Account Information </a>
+    <br />
+    <br />
+    <div id="credentials" style="display: none">
+      <a href="/inv/">Manage Vehicles</a>
+    </div>
+    <% } else { %>
+    <script>
+      window.location.href = "/";
+    </script>
+    <% } %>
+  </body>
+</html>
