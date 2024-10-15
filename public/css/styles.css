@@ -535,6 +535,132 @@ body {
 }
 
 
+/******* New vehicle form styles ***************/
+
+/* Styles for Vehicle Form Only */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.vehicle-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-form .flex-column {
+  margin-bottom: 15px;
+}
+
+.vehicle-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.vehicle-form .inputForm input,
+.vehicle-form .inputForm textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.vehicle-form .inputForm input:focus,
+.vehicle-form .inputForm textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.vehicle-form .button-submit {
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.vehicle-form .button-submit:hover {
+  background-color: #2980b9;
+}
+
+/* Validation Styles */
+.vehicle-form .inputForm input:invalid {
+  border-color: #e74c3c;
+}
+
+.vehicle-form .inputForm input:valid {
+  border-color: #2ecc71;
+}
+
+.vehicle-form .notice {
+  color: #e74c3c;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.vehicle-form .notice li {
+  margin-bottom: 5px;
+}
+
+/* Pop-up Message */
+.vehicle-form .pop-up {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+/* Responsive Styles */
+
+/* Small devices (less than 768px) */
+@media (max-width: 768px) {
+  .vehicle-form-container {
+    padding: 15px;
+  }
+
+  .vehicle-form .inputForm input,
+  .vehicle-form .inputForm textarea {
+    font-size: 14px;
+  }
+
+  .vehicle-form .button-submit {
+    font-size: 14px;
+  }
+}
+
+/* Large devices (1024px and up) */
+@media (min-width: 1024px) {
+  .vehicle-form-container {
+    max-width: 800px;
+  }
+
+  .vehicle-form .inputForm input,
+  .vehicle-form .inputForm textarea {
+    font-size: 18px;
+  }
+
+  .vehicle-form .button-submit {
+    font-size: 18px;
+  }
+}
+
+
+
+
 /*Everything inside of this @media tag relates to the desktop view (e.g. anything 768px or more)*/
 @media only screen and (min-width: 768px) {
   body {
